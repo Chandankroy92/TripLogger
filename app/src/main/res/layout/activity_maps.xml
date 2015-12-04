@@ -1,0 +1,47 @@
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="199dp"
+            android:layout_height="50dp"
+            android:id="@+id/etsearch" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Search"
+            android:id="@+id/button"
+            android:onClick="onSearch"
+            android:background="#409eff"
+            android:textColor="#fffdfd" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="view"
+            android:id="@+id/button2"
+            android:textColor="#ffffff"
+            android:background="#409eff"
+            android:onClick="setChangeType" />
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="382dp"
+        android:layout_height="480dp" android:id="@+id/map"
+        tools:context="com.example.singh.log.MapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+</LinearLayout>
+</LinearLayout>

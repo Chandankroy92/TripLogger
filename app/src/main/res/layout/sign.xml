@@ -1,0 +1,106 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:gravity="center"
+    tools:context="com.example.singh.triplogger.login"
+    android:background="#0d47a1"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/white"
+            android:hint="@string/name"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:inputType="textCapWords"
+            android:textColor="#b2010101"
+            android:id="@+id/etnames" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/white"
+            android:hint="@string/email"
+            android:padding="8dp"
+            android:singleLine="true"
+
+            android:textColor="#c7010101"
+            android:id="@+id/etemail" />
+
+        <EditText
+            android:id="@+id/etpassword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/white"
+            android:hint="@string/enterpass"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:textColor="#c1020102"/>
+        <EditText
+            android:id="@+id/etpass"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/white"
+            android:hint="@string/passwordC"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:textColor="#bf020202"/>
+
+        <EditText
+            android:id="@+id/etphone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/white"
+            android:hint="@string/number"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:inputType="phone"
+            android:textColor="#ce020202"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/white"
+            android:text="@string/bregister"
+            android:padding="8dp"
+            android:textColor="#0d47a1"
+            android:onClick="onRegisterClick"
+            android:layout_weight="0.06" />
+
+        <Button
+            android:id="@+id/btnLinkToLoginScreen"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/registerd"
+
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent"
+            android:textSize="15sp"
+            android:onClick="onClick" />
+    </LinearLayout>
+
+</LinearLayout>
+
