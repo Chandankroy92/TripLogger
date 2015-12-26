@@ -1,4 +1,4 @@
-package com.example.singh.log;
+  package com.example.singh.log;
 
 import android.location.Address;
 import android.location.Geocoder;
