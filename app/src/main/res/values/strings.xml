@@ -6,7 +6,7 @@
     <string name="title_activity_login">login</string>
     <string name="title_activity_sign">sign</string>
     <string name="title_activity_register">register</string>
-    <string name="name">Name</string>
+    <string name="user_name">User name</string>
     <string name="email">Email Address</string>
     <string name="enterpass">Password</string>
     <string name="passwordC">Confirm Password</string>

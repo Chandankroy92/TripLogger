@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -6,8 +6,8 @@
     android:padding="10dp"
     android:gravity="center"
     tools:context="com.example.singh.triplogger.login"
-    android:background="#0d47a1"
-    android:weightSum="1">
+    android:background="#0d47a1">
+
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -23,12 +23,13 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@android:color/white"
-            android:hint="@string/name"
+            android:hint="@string/user_name"
             android:padding="8dp"
             android:singleLine="true"
             android:inputType="textCapWords"
             android:textColor="#b2010101"
-            android:id="@+id/etnames" />
+            android:layout_marginTop="40dp"
+            android:id="@+id/et_username" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -38,12 +39,11 @@
             android:hint="@string/email"
             android:padding="8dp"
             android:singleLine="true"
-
             android:textColor="#c7010101"
-            android:id="@+id/etemail" />
+            android:id="@+id/et_email" />
 
         <EditText
-            android:id="@+id/etpassword"
+            android:id="@+id/et_password"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -53,8 +53,9 @@
             android:singleLine="true"
             android:inputType="textPassword"
             android:textColor="#c1020102"/>
+
         <EditText
-            android:id="@+id/etpass"
+            android:id="@+id/et_pass"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -66,7 +67,7 @@
             android:textColor="#bf020202"/>
 
         <EditText
-            android:id="@+id/etphone"
+            android:id="@+id/et_phone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -82,7 +83,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:background="@android:color/white"
             android:text="@string/bregister"
             android:padding="8dp"
             android:textColor="#0d47a1"
@@ -102,5 +102,6 @@
             android:onClick="onClick" />
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
+
 

@@ -24,7 +24,7 @@
         android:label="TripLogger"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".splash"
+            android:name=".SplashActivity"
             android:label="TripLogger" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,15 +33,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".sign"
-            android:label="@string/title_activity_sign" >
+            android:name=".SigningActivity"
+            android:label="@string/title_activity_sign">
         </activity>
         <activity
             android:name=".Home"
             android:label="TripLogger" >
         </activity>
         <activity
-            android:name=".login"
+            android:name=".LoginActivity"
             android:label="TripLogger" >
         </activity>
         <activity

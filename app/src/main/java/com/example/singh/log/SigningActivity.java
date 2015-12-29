@@ -11,35 +11,41 @@ import android.widget.Toast;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class sign extends Activity implements View.OnClickListener {
+public class SigningActivity extends Activity {
     EditText editTextUserName,editTextPassword,editTextConfirmPassword,editemail,editPhone;
-    Button btnCreateAccount;
+    Button btnCreateAccount, btnLoginScreen;
 
     LoginDataBaseAdapter loginDataBaseAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sign);
+        setContentView(R.layout.activity_singing);
 
-// get Instance of Database Adapter
+        // get Instance of Database Adapter
         loginDataBaseAdapter=new LoginDataBaseAdapter(this);
         loginDataBaseAdapter=loginDataBaseAdapter.open();
 
-        editTextUserName=(EditText)findViewById(R.id.etnames);
-        editTextPassword=(EditText)findViewById(R.id.etpassword);
-        editTextConfirmPassword=(EditText)findViewById(R.id.etpass);
-        editemail=(EditText)findViewById(R.id.etemail);
-        editPhone=(EditText)findViewById(R.id.etphone);
+        editTextUserName=(EditText)findViewById(R.id.et_username);
+        editTextPassword=(EditText)findViewById(R.id.et_password);
+        editTextConfirmPassword=(EditText)findViewById(R.id.et_pass);
+        editemail=(EditText)findViewById(R.id.et_email);
+        editPhone=(EditText)findViewById(R.id.et_phone);
 
         btnCreateAccount=(Button)findViewById(R.id.btnRegister);
-        Button b2=(Button)findViewById(R.id.btnLinkToLoginScreen);
-        b2.setOnClickListener(this);
+        btnLoginScreen =(Button)findViewById(R.id.btnLinkToLoginScreen);
+
+        btnLoginScreen.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+
+                startLoginScreen();
+            }
+        });
+
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-// TODO Auto-generated method stub
 
+//              TODO Auto-generated method stub
                 String userName=editTextUserName.getText().toString();
                 String password=editTextPassword.getText().toString();
                 String confirmPassword=editTextConfirmPassword.getText().toString();
@@ -74,15 +80,16 @@ public class sign extends Activity implements View.OnClickListener {
                 }
                 else
                 {
-// Save the Data in Database
+                    // Save the Data in Database
                     loginDataBaseAdapter.insertEntry(userName,password,email,phone);
                     Toast.makeText(getApplicationContext(), "Account Successfully Created ", Toast.LENGTH_LONG).show();
+                    clearViews();
+                    startLoginScreen();
                 }
 
 
             }
         });
-
     }
 
     private boolean validateemail(String emailval) {
@@ -100,19 +107,30 @@ public class sign extends Activity implements View.OnClickListener {
     }
 
     @Override
-    public void onClick(View v) {
-        if(v.getId()==R.id.btnLinkToLoginScreen)
-        {
-            Intent i= new Intent(sign.this,login.class);
-            startActivity(i);
-        }
-    }
-    @Override
     protected void onDestroy() {
-// TODO Auto-generated method stub
+//      TODO Auto-generated method stub
         super.onDestroy();
-
         loginDataBaseAdapter.close();
     }
+
+    private void clearViews(){
+        editemail.setText("");
+        editPhone.setText("");
+        editTextConfirmPassword.setText("");
+        editTextPassword.setText("");
+        editTextUserName.setText("");
+    }
+
+    private void startLoginScreen(){
+        startActivity(new Intent(SigningActivity.this,LoginActivity.class));
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startLoginScreen();
+    }
+
 
 }

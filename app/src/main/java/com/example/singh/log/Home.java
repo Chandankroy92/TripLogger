@@ -74,7 +74,7 @@ public class Home extends ActionBarActivity implements View.OnClickListener {
          switch(v.getId())
         {
             case R.id.imageButton5:
-                Intent i=new Intent(Home.this,login.class);
+                Intent i=new Intent(Home.this,LoginActivity.class);
                 startActivity(i);
                 break;
 
