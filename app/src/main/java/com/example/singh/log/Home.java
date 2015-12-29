@@ -1,5 +1,7 @@
 package com.example.singh.log;
 
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -7,30 +9,33 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 
-public class Home extends ActionBarActivity implements View.OnClickListener {
-    ImageButton b1,b2,b3,b4,b5;
+public class Home extends Activity implements View.OnClickListener {
 
+    ImageButton img_camera,img_gallery,img_feedback,img_location,img_login;
+
+    private static final int PICK_FROM_FILE = 1, PICK_FROM_CAMERA = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
 
-        b1=(ImageButton)findViewById(R.id.imageButton2);
-        b2=(ImageButton)findViewById(R.id.imageButton3);
-        b3=(ImageButton)findViewById(R.id.imageButton5);
-        b4=(ImageButton)findViewById(R.id.imageButton4);
-        b5=(ImageButton)findViewById(R.id.imageButton6);
+        img_camera=(ImageButton)findViewById(R.id.img_camera);
+        img_gallery=(ImageButton)findViewById(R.id.img_gallery);
+        img_feedback=(ImageButton)findViewById(R.id.img_feedback);
+        img_location=(ImageButton)findViewById(R.id.img_location);
+        img_login=(ImageButton)findViewById(R.id.img_login);
 
-        b2.setOnClickListener(this);
-        b3.setOnClickListener(this);
-        b4.setOnClickListener(this);
-        b5.setOnClickListener(this);
+        img_gallery.setOnClickListener(this);
+        img_feedback.setOnClickListener(this);
+        img_location.setOnClickListener(this);
+        img_login.setOnClickListener(this);
 
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        img_camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
@@ -73,26 +78,39 @@ public class Home extends ActionBarActivity implements View.OnClickListener {
     public void onClick(View v) {
          switch(v.getId())
         {
-            case R.id.imageButton5:
+            case R.id.img_login:
                 Intent i=new Intent(Home.this,LoginActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.imageButton3:
+            case R.id.img_gallery:
                 Intent j=new Intent(Home.this,gallery.class);
                 startActivity(j);
                 break;
-            case R.id.imageButton4:
+            case R.id.img_location:
                 Intent x=new Intent(Home.this,MapsActivity.class);
                 startActivity(x);
                 break;
-            case R.id.imageButton6:
-                Intent y=new Intent(Home.this,email.class);
-                startActivity(y);
+            case R.id.img_feedback:
+                sendFeedBack();
                 break;
 
         }
+    }
 
+    private void sendFeedBack(){
+        try {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"singhmania@hotmail.com"});
+            intent.putExtra(Intent.EXTRA_SUBJECT, "feedback");
+            intent.putExtra(Intent.EXTRA_TEXT, "Life is open Trip so don't waste it n get started now!!!");
+            intent.setType("message/rfc822");
+            startActivity(intent);
+        } catch (ActivityNotFoundException ae) {
+            Toast toast=Toast.makeText(Home.this, "Sorry!No Email Client Found :(", Toast.LENGTH_LONG);
+            toast.show();
+
+        }
     }
 }
 

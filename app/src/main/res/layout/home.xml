@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/route">
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="540dp">
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/route"
+        tools:context="com.example.singh.triplogger.Home">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton2"
+            android:id="@+id/img_camera"
             android:layout_gravity="left|top"
             android:src="@drawable/cm"
             android:layout_marginTop="80dp"
@@ -20,7 +18,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton3"
+            android:id="@+id/img_gallery"
             android:layout_gravity="right|top"
             android:layout_marginTop="80dp"
             android:src="@drawable/galler"
@@ -29,7 +27,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton4"
+            android:id="@+id/img_location"
             android:layout_gravity="left|center_vertical"
             android:src="@drawable/loca"
             android:layout_margin="5dp"
@@ -40,7 +38,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton6"
+            android:id="@+id/img_feedback"
             android:layout_gravity="center"
             android:src="@drawable/feed"
             android:layout_marginTop="100dp"
@@ -51,7 +49,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton5"
+            android:id="@+id/img_login"
             android:layout_marginBottom="80dp"
             android:layout_marginTop="220dp"
             android:layout_gravity="right|center_vertical"
@@ -59,11 +57,4 @@
             android:src="@drawable/sign"
             android:background="@android:color/transparent" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView"
-            android:layout_gravity="center" />
-
     </FrameLayout>
-</LinearLayout>

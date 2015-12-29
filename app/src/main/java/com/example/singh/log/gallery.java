@@ -43,7 +43,7 @@ public class gallery extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        ImageButton buttonLoadImage = (ImageButton) findViewById(R.id.imageButton3);
+        ImageButton buttonLoadImage = (ImageButton) findViewById(R.id.img_camera);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -75,7 +75,7 @@ public class gallery extends Activity {
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
 
-            ImageView imageView = (ImageView) findViewById(R.id.imageView);
+            ImageView imageView = (ImageView) findViewById(R.id.img_gallery);
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
 
         }

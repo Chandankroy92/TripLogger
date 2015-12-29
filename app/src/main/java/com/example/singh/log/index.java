@@ -25,7 +25,6 @@ ImageButton c1;
         if(v.getId()==R.id.imageButton)
         {
             Intent i=new Intent(index.this,Home.class);
-
             startActivity(i);
 
         }
