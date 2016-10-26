@@ -61,8 +61,8 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".email"
-            android:label="@string/title_activity_email" >
+            android:name=".ImageDisplayActivity"
+            android:label="@string/title_activity_display_image" >
         </activity>
         <activity
             android:name=".MapsActivity"

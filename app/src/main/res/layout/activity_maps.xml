@@ -1,10 +1,10 @@
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <LinearLayout
+        android:id="@+id/lin_option"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -34,14 +34,12 @@
             android:background="#409eff"
             android:onClick="setChangeType" />
     </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="382dp"
-        android:layout_height="480dp" android:id="@+id/map"
+
+    <fragment
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:id="@+id/map"
         tools:context="com.example.singh.log.MapsActivity"
-        android:name="com.google.android.gms.maps.SupportMapFragment" />
-</LinearLayout>
-</LinearLayout>
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_below="@id/lin_option"/>
+</RelativeLayout>
